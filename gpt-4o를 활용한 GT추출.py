@@ -8,8 +8,8 @@ from openai import OpenAI
 client = OpenAI(api_key="본인 API 키 입력")
 
 # 폴더 & CSV 경로
-image_folder = r"C:\Users\박지혜\PycharmProjects\pythonProject1\추론용 이미지 100장"
-output_csv = os.path.join(os.path.dirname(image_folder), "추론용 GT.csv")
+image_folder = "./images"   # 같은 프로젝트 폴더 안의 images 폴더
+output_csv = "./output.csv"
 
 
 # 📝 프롬프트
@@ -68,6 +68,7 @@ with open(output_csv, mode="w", newline="", encoding="utf-8") as f:
         writer.writerow([image_file, caption])
 
 print(f"✅ 완료! 결과가 '{output_csv}'에 저장되었습니다.")
+
 
 
 
